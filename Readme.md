@@ -28,8 +28,6 @@ The project features a simple user interface built with React.js. It includes:
 - Buttons to set the default language and submit code.
 - Sections to display job status, output, and execution details.
 
-![Interface Screenshot](/assets/Screenshot%202025-01-20%20112623.png)
-
 ### Terminal Interaction
 For terminal-based execution, the application supports C++ and Python compilation and execution via backend scripts.
 
