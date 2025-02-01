@@ -3,8 +3,8 @@ const cors = require("cors")
 const mongoose = require("mongoose")
 
 const { generateFile } = require('./generateFile')
-const { executeCpp } = require("./executeCpp")
-const { executePy } = require("./executePy")
+const { executeCpp } = require("./languages/executeCpp")
+const { executePy } = require("./languages/executePy")
 const Job = require("./models/Job")
 const { addJobToQueue } = require("./jobQueue")
 

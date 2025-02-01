@@ -1,7 +1,7 @@
 const Queue = require("bull")
 const Job = require("./models/Job")
-const { executeCpp } = require("./executeCpp")
-const { executePy } = require("./executePy")
+const { executeCpp } = require("./languages/executeCpp")
+const { executePy } = require("./languages/executePy")
 
 const jobQueue = new Queue("job-queue")
 const NUM_WORKERS = 5
