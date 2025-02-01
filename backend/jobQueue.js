@@ -2,6 +2,8 @@ const Queue = require("bull")
 const Job = require("./models/Job")
 const { executeCpp } = require("./languages/executeCpp")
 const { executePy } = require("./languages/executePy")
+const { executeJs } = require("./languages/executeJs")
+const { executeJava } = require("./languages/executeJava")
 
 const jobQueue = new Queue("job-queue")
 const NUM_WORKERS = 5
@@ -22,6 +24,10 @@ jobQueue.process(NUM_WORKERS, async ({ data }) => {
             output = await executeCpp(job.filepath)
         } else if (job.language === "py") {
             output = await executePy(job.filepath)
+        } else if (job.language === "js") {
+            output = await executeJs(job.filepath)
+        } else if (job.language === "java") {
+            output = await executeJava(job.filepath)
         } else {
             throw new Error(`Unsupported language: ${job.language}`)
         }
